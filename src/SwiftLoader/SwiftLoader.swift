@@ -212,6 +212,7 @@ public class SwiftLoader: UIView {
         private func setup() {
             self.backgroundColor = UIColor.clearColor()
             self.lineWidth = fmaxf(Float(self.frame.size.width) * 0.025, 1)
+            self.speed = self.config.speed
             
             self.backgroundLayer = CAShapeLayer()
             self.backgroundLayer?.strokeColor = self.config.spinnerColor.CGColor
