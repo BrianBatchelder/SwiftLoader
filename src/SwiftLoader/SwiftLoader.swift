@@ -59,6 +59,7 @@ public class SwiftLoader: UIView {
         let currentWindow : UIWindow = UIApplication.sharedApplication().keyWindow!
         
         let loader = SwiftLoader.sharedInstance
+        loader.userInteractionEnabled = false     
         loader.canUpdated = true
         loader.animated = animated
         loader.title = title
@@ -72,7 +73,8 @@ public class SwiftLoader: UIView {
         if (loader.superview == nil) {
             loader.coverView = UIView(frame: currentWindow.bounds)
             loader.coverView?.backgroundColor = loader.config.foregroundColor.colorWithAlphaComponent(loader.config.foregroundAlpha)
-            
+            loader.coverView?.userInteractionEnabled = false
+
             currentWindow.addSubview(loader.coverView!)
             currentWindow.addSubview(loader)
             loader.start()
